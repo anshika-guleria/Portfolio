@@ -1,7 +1,7 @@
 # ✨ Anshika Guleria — Portfolio
 
 My personal portfolio website built with React, Tailwind CSS, and Vite.  
-Live at → [anshika-guleria.vercel.app](https://anshika-guleria.vercel.app)
+Live at → [anshika-guleria.vercel.app](https://portfolio-umber-eight-72.vercel.app/)
 
 ---
 
