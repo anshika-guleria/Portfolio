@@ -10,15 +10,35 @@ export default function Skills() {
   const { dark } = useTheme();
 
   return (
-    <section className={`py-28 px-6 md:px-16 transition-colors duration-500 ${dark ? "bg-gradient-to-b from-[#0b1220] via-[#0f172a] to-[#0b1220]" : "bg-gradient-to-b from-blue-50 via-white to-blue-100"}`}>
-      <h2 className={`text-4xl md:text-5xl font-bold text-center mb-6 transition-colors duration-500 ${dark ? "text-indigo-300" : "text-blue-900"}`}>
+    <section className={`
+      py-16 sm:py-20 md:py-28
+      px-5 sm:px-8 md:px-16
+      transition-colors duration-500
+      ${dark
+        ? "bg-gradient-to-b from-[#0b1220] via-[#0f172a] to-[#0b1220]"
+        : "bg-gradient-to-b from-blue-50 via-white to-blue-100"
+      }
+    `}>
+
+      <h2 className={`
+        text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-3 sm:mb-4
+        transition-colors duration-500
+        ${dark ? "text-indigo-300" : "text-blue-900"}
+      `}>
         Skills & Technologies
       </h2>
-      <p className={`text-center max-w-2xl mx-auto mb-20 text-lg ${dark ? "text-indigo-400" : "text-blue-700"}`}>
+
+      <p className={`
+        text-center max-w-2xl mx-auto
+        mb-10 sm:mb-14 md:mb-20
+        text-base sm:text-lg
+        ${dark ? "text-indigo-400" : "text-blue-700"}
+      `}>
         Technologies I use to build scalable, performant, and user-centric applications.
       </p>
 
-      <div className="max-w-6xl mx-auto grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+      {/* 2 cols on mobile, 3 on sm+, stays 3 on md+ */}
+      <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8 lg:gap-6">
         <SkillCard icon={<FaReact />}        name="React"           color="bg-cyan-500"    glow="cyan"    dark={dark} />
         <SkillCard icon={<FaJsSquare />}     name="JavaScript"      color="bg-amber-500"   glow="amber"   dark={dark} />
         <SkillCard icon={<FaNodeJs />}       name="Node.js"         color="bg-emerald-600" glow="emerald" dark={dark} />
@@ -49,26 +69,33 @@ const glowMap = {
 function SkillCard({ icon, name, color, glow, dark }) {
   return (
     <div className={`
-      group rounded-3xl p-10 text-center
+      group rounded-2xl sm:rounded-3xl
+      p-5 sm:p-7 md:p-8 lg:p-6
+      text-center
       transition-all duration-300
-      hover:-translate-y-3 hover:scale-[1.03]
+      hover:-translate-y-2 hover:scale-[1.03]
       cursor-default
       ${dark
         ? `bg-white/5 border border-indigo-900/60 hover:border-indigo-500/50 hover:bg-white/10 hover:shadow-xl ${glowMap[glow]}`
         : `bg-white/80 backdrop-blur-md border border-blue-100 hover:border-blue-300 hover:shadow-2xl ${glowMap[glow]} shadow-lg`
       }
     `}>
+
+      {/* Icon box — smaller on mobile */}
       <div className={`
-        mx-auto mb-6 w-20 h-20 flex items-center justify-center
-        rounded-2xl ${color} shadow-md
+        mx-auto mb-4 sm:mb-5
+        w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20
+        flex items-center justify-center
+        rounded-xl sm:rounded-2xl ${color} shadow-md
         group-hover:scale-110 group-hover:rotate-3
         transition-all duration-300
       `}>
-        <div className="text-white text-4xl">{icon}</div>
+        <div className="text-white text-2xl sm:text-3xl md:text-4xl">{icon}</div>
       </div>
 
       <h3 className={`
-        text-xl font-semibold tracking-wide transition-colors duration-300
+        text-sm sm:text-base md:text-lg lg:text-base
+        font-semibold tracking-wide transition-colors duration-300
         ${dark
           ? "text-indigo-200 group-hover:text-white"
           : "text-blue-900 group-hover:text-indigo-600"

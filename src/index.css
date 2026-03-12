@@ -12,8 +12,7 @@ html.dark body {
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 
-/* ── Project image hover (scoped) ── */
-.project-image { transition: transform 0.5s; }
+
 
 /* ══════════════════════════════════════
    STAR FIELD  (hero section — React spans)
@@ -122,14 +121,3 @@ html.dark body {
 }
 .animate-float { animation: float 4s ease-in-out infinite; }
 
-/* ══════════════════════════════════════
-   SKILL CARD — scale-110 for icon hover
-   (Tailwind's group-hover:scale-110 may
-    need this explicit rule in some setups)
-══════════════════════════════════════ */
-.group:hover .group-hover\:scale-110 {
-  transform: scale(1.10);
-}
-.group:hover .group-hover\:rotate-3 {
-  transform: scale(1.10) rotate(3deg);
-}

@@ -1,12 +1,12 @@
 import { ArrowUp, Moon, Sparkles, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import { ThemeContext } from "../src/components/Themecontext";
 import About from "./components/About";
 import Contacts from "./components/Contacts.jsx";
 import Project from "./components/Project";
 import Skills from "./components/Skills.jsx";
-import { projects } from "./prodata/projectsData.js";
+import { ThemeContext } from "./components/Themecontext";
+import { projects } from "./prodata/projectsdata";
 
 export default function App() {
   const [dark, setDark] = useState(() => localStorage.getItem("theme") === "dark");
@@ -40,9 +40,10 @@ export default function App() {
           role="button"
           aria-label="Toggle theme"
           className={`
-            fixed top-5 right-5 z-50
-            flex items-center gap-2 px-4 py-2 rounded-full
-            cursor-pointer select-none
+            fixed top-4 right-4 z-50
+            flex items-center gap-1.5 sm:gap-2
+            px-3 sm:px-4 py-1.5 sm:py-2
+            rounded-full cursor-pointer select-none
             transition-all duration-300 hover:scale-105 active:scale-95
             ${dark
               ? "bg-indigo-950/80 border border-indigo-700/50 backdrop-blur-md text-indigo-200 shadow-lg shadow-indigo-950/50 hover:bg-indigo-900/90"
@@ -50,10 +51,15 @@ export default function App() {
             }
           `}
         >
-          <div className={`w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 ${dark ? "bg-indigo-800/60 text-amber-300" : "bg-blue-100 text-indigo-500"}`}>
-            {dark ? <Sun size={15} strokeWidth={2.5} /> : <Moon size={15} strokeWidth={2.5} />}
+          <div className={`
+            w-6 h-6 sm:w-7 sm:h-7 rounded-full
+            flex items-center justify-center
+            transition-all duration-300
+            ${dark ? "bg-indigo-800/60 text-amber-300" : "bg-blue-100 text-indigo-500"}
+          `}>
+            {dark ? <Sun size={13} strokeWidth={2.5} /> : <Moon size={13} strokeWidth={2.5} />}
           </div>
-          <span className="text-sm font-semibold tracking-wide pr-1">
+          <span className="text-xs sm:text-sm font-semibold tracking-wide pr-0.5 sm:pr-1">
             {dark ? "Light mode" : "Dark mode"}
           </span>
         </div>
@@ -63,8 +69,9 @@ export default function App() {
           onClick={scrollToTop}
           aria-label="Back to top"
           className={`
-            fixed bottom-8 right-6 z-50
-            w-11 h-11 rounded-full flex items-center justify-center
+            fixed bottom-6 right-4 sm:bottom-8 sm:right-6 z-50
+            w-10 h-10 sm:w-11 sm:h-11 rounded-full
+            flex items-center justify-center
             transition-all duration-300 hover:scale-110 active:scale-95
             ${showTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}
             ${dark
@@ -73,7 +80,7 @@ export default function App() {
             }
           `}
         >
-          <ArrowUp size={18} strokeWidth={2.5} />
+          <ArrowUp size={16} strokeWidth={2.5} />
         </button>
 
         {/* ===== SECTIONS ===== */}
@@ -81,21 +88,33 @@ export default function App() {
         <Skills />
 
         {/* ===== PROJECTS ===== */}
-        <section className={`projects-section py-16 px-0 overflow-hidden transition-colors duration-500 ${dark ? "starry-bg text-indigo-100" : "bg-gray-50 text-gray-900"}`}>
-          <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${dark ? "text-indigo-300" : "text-blue-900"}`}>
+        <section className={`
+          projects-section overflow-hidden transition-colors duration-500
+          py-10 sm:py-14 md:py-16 px-0
+          ${dark ? "starry-bg text-indigo-100" : "bg-gray-50 text-gray-900"}
+        `}>
+          <h2 className={`
+            text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-center
+            ${dark ? "text-indigo-300" : "text-blue-900"}
+          `}>
             {dark ? (
               <span className="flex items-center justify-center gap-3">
-                <Sparkles size={22} className="text-indigo-400" />
+                <Sparkles size={20} className="text-indigo-400" />
                 My Projects
               </span>
             ) : "My Projects"}
           </h2>
 
-          <div className="relative flex gap-6 overflow-x-auto snap-x snap-mandatory px-[6vw] md:px-[8vw] py-16 md:py-20 no-scrollbar scroll-smooth">
+          {/* Carousel — card width tightened on mid screens */}
+          <div className="relative flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory px-[5vw] sm:px-[6vw] md:px-[8vw] py-10 sm:py-14 md:py-16 no-scrollbar scroll-smooth">
             {projects.map((project, idx) => (
               <div
                 key={idx}
-                className={`flex-shrink-0 w-[88vw] md:w-[860px] snap-start ${idx === projects.length - 1 ? "mr-[6vw] md:mr-[8vw]" : ""}`}
+                className={`
+                  flex-shrink-0 snap-start
+                  w-[90vw] sm:w-[80vw] md:w-[720px] lg:w-[860px]
+                  ${idx === projects.length - 1 ? "mr-[5vw] sm:mr-[6vw] md:mr-[8vw]" : ""}
+                `}
               >
                 <Project {...project} />
               </div>

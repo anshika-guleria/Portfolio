@@ -11,7 +11,6 @@ export default function Project({ title, image, description, technologies, links
       group rounded-3xl shadow-2xl overflow-hidden
       flex flex-col md:flex-row
       border-t-4
-      h-[500px] md:h-[470px]
       transition-all duration-300
       hover:-translate-y-3
       mx-2 md:mx-4
@@ -21,8 +20,10 @@ export default function Project({ title, image, description, technologies, links
       }
     `}>
 
-      {/* Image */}
-      <div className="md:w-1/2 h-64 md:h-auto flex-shrink-0 overflow-hidden">
+      {/* ── Image ──
+          Mobile: shorter fixed height so content fits below
+          Desktop: half width, full height of card */}
+      <div className="w-full md:w-1/2 h-44 sm:h-52 md:h-auto md:min-h-[420px] flex-shrink-0 overflow-hidden">
         <img
           src={image}
           alt={title}
@@ -30,11 +31,18 @@ export default function Project({ title, image, description, technologies, links
         />
       </div>
 
-      {/* Content */}
-      <div className={`md:w-1/2 p-8 flex flex-col justify-between ${dark ? "text-indigo-100" : "text-gray-900"}`}>
+      {/* ── Content ── */}
+      <div className={`
+        w-full md:w-1/2 p-5 sm:p-6 md:p-8
+        flex flex-col justify-between gap-3
+        ${dark ? "text-indigo-100" : "text-gray-900"}
+      `}>
+
+        {/* Title + description */}
         <div>
           <h3 className={`
-            text-3xl md:text-4xl font-bold mb-4 transition-colors duration-300
+            text-2xl sm:text-3xl md:text-4xl font-bold mb-2 md:mb-4
+            transition-colors duration-300
             ${dark
               ? "text-indigo-100 group-hover:text-indigo-300"
               : "text-blue-900 group-hover:text-indigo-700"
@@ -42,19 +50,22 @@ export default function Project({ title, image, description, technologies, links
           `}>
             {title}
           </h3>
-          <p className={`text-lg md:text-xl mb-4 ${dark ? "text-indigo-300" : "text-gray-700"}`}>
+          <p className={`
+            text-sm sm:text-base md:text-lg leading-relaxed
+            ${dark ? "text-indigo-300" : "text-gray-700"}
+          `}>
             {description}
           </p>
         </div>
 
         {/* Technologies */}
-        <div className="flex flex-wrap gap-3 mb-4">
+        <div className="flex flex-wrap gap-2">
           {technologies.map((tech, idx) => (
             <span
               key={idx}
               className={`
-                flex items-center gap-2 px-4 py-2 rounded-full
-                text-sm md:text-base font-medium
+                flex items-center gap-1.5 px-3 py-1.5 rounded-full
+                text-xs sm:text-sm font-medium
                 transition-all duration-200 hover:scale-105
                 ${dark
                   ? idx % 2 === 0
@@ -66,21 +77,24 @@ export default function Project({ title, image, description, technologies, links
                 }
               `}
             >
-              {techIcons[tech] && <span className="text-xl">{techIcons[tech]}</span>}
+              {techIcons[tech] && (
+                <span className="text-base sm:text-lg">{techIcons[tech]}</span>
+              )}
               <span>{tech}</span>
             </span>
           ))}
         </div>
 
         {/* Links */}
-        <div className="flex gap-4 mt-auto">
+        <div className="flex gap-3 mt-1">
           {links.github && (
             <a
               href={links.github}
               target="_blank"
               rel="noreferrer"
               className={`
-                flex items-center gap-2 px-6 py-3 rounded-2xl font-medium
+                flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3
+                rounded-2xl text-sm sm:text-base font-medium
                 transition-all duration-200 hover:scale-[1.05]
                 ${dark
                   ? "bg-indigo-600 hover:bg-indigo-500 text-white hover:shadow-lg hover:shadow-indigo-500/30"
@@ -88,7 +102,7 @@ export default function Project({ title, image, description, technologies, links
                 }
               `}
             >
-              <FaGithub className="text-lg" /> GitHub
+              <FaGithub className="text-base sm:text-lg" /> GitHub
             </a>
           )}
           {links.vercel && (
@@ -97,7 +111,8 @@ export default function Project({ title, image, description, technologies, links
               target="_blank"
               rel="noreferrer"
               className={`
-                flex items-center gap-2 px-6 py-3 rounded-2xl font-medium
+                flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3
+                rounded-2xl text-sm sm:text-base font-medium
                 transition-all duration-200 hover:scale-[1.05]
                 ${dark
                   ? "bg-purple-600 hover:bg-purple-500 text-white hover:shadow-lg hover:shadow-purple-500/30"
@@ -105,7 +120,7 @@ export default function Project({ title, image, description, technologies, links
                 }
               `}
             >
-              <SiVercel className="text-lg" /> Live
+              <SiVercel className="text-base sm:text-lg" /> Live
             </a>
           )}
         </div>
