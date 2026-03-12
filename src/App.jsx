@@ -6,7 +6,7 @@ import Contacts from "./components/Contacts.jsx";
 import Project from "./components/Project";
 import Skills from "./components/Skills.jsx";
 import { ThemeContext } from "./components/Themecontext";
-import { projects } from "./prodata/projectsdata";
+import { projects } from "./prodata/projectsdata.js";
 
 export default function App() {
   const [dark, setDark] = useState(() => localStorage.getItem("theme") === "dark");
