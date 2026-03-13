@@ -21,20 +21,6 @@ Live at → [anshika-guleria.vercel.app](https://portfolio-umber-eight-72.vercel
 - 🎯 Smooth hover effects & animations
 - ↑ Back to top button
 
-## 📂 Sections
-
-- **Hero** — Introduction with typewriter effect
-- **Skills** — Technologies I work with
-- **Projects** — My recent work
-- **Contact** — Links to reach me
-
-## 🚀 Run Locally
-```bash
-git clone https://github.com/anshika-guleria/portfolio.git
-cd portfolio
-npm install
-npm run dev
-```
 
 ## 📬 Contact
 
