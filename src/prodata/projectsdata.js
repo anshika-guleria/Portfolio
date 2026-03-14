@@ -1,5 +1,7 @@
 // src/data/projectsData.js
+import LifeShare from "../assets/LifeShare.png";
 import ThinkBoard from "../assets/ThinkBoard.png";
+import WordWaltz from "../assets/WordWaltz.png";
 export const projects = [
   {
     title: "ThinkBoard",
@@ -11,23 +13,25 @@ export const projects = [
       vercel: "https://think-borad.vercel.app/"
     }
   },
-  {
-    title: "Task Manager",
-    image: "/task-manager.png",
-    description: "Manage your daily tasks efficiently wit",
-    technologies: ["React", "Express", "MongoDB"],
+ {
+    title: "Word Waltz",
+    image: WordWaltz,
+    description:
+      "A high-stakes word guessing game built in React. Every wrong guess wipes a language off the map — lose them all and it's game over. Guess the word to save the world!",
+    technologies: ["React", "Tailwind", "Vercel"],
     links: {
-      github: "https://github.com/your-task-manager"
-    }
+      github: "https://github.com/anshika-guleria/Word_waltz_game",
+      vercel: "https://word-waltz.vercel.app/",
+    },
   },
   {
-    title: "Portfolio Website",
-    image: "/portfolio.png",
-    description: "My personal portfolio built with React and Tailwind.",
-    technologies: ["React", "TailwindCSS", "Vercel"],
+    title: "LifeShare",
+    image: LifeShare,
+    description:
+      "A full-featured Flutter app streamlining organ and blood donation. Connects donors with recipients in real time, with dedicated donor/recipient dashboards, request tracking, and an admin panel — built as a UG final year project.",
+    technologies: ["Flutter", "Dart"],
     links: {
-      github: "https://github.com/your-portfolio",
-      vercel: "https://your-portfolio.vercel.app"
-    }
-  }
+      github: "https://github.com/anshika-guleria/blood_organ_donation_app",
+    },
+  },
 ];
