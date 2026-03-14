@@ -27,6 +27,7 @@ export const projects = [
   {
     title: "LifeShare",
     image: LifeShare,
+      mobileImageHeight: "96px",
     description:
       "A full-featured Flutter app streamlining organ and blood donation. Connects donors with recipients in real time, with dedicated donor/recipient dashboards, request tracking, and an admin panel — built as a UG final year project.",
     technologies: ["Flutter", "Dart"],

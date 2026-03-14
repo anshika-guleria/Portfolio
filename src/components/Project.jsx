@@ -3,7 +3,7 @@ import { SiVercel } from "react-icons/si";
 import { useTheme } from "./Themecontext";
 import { techIcons } from "./teachIcons";
 
-export default function Project({ title, image, description, technologies, links }) {
+export default function Project({ title, image, description, technologies, links,mobileImageHeight = "128px"}) {
   const { dark } = useTheme();
 
   return (
@@ -23,7 +23,10 @@ export default function Project({ title, image, description, technologies, links
       {/* ── Image ──
           Mobile: shorter fixed height so content fits below
           Desktop: half width, full height of card */}
-      <div className="w-full md:w-1/2 h-44 sm:h-52 md:h-auto md:min-h-[420px] flex-shrink-0 overflow-hidden">
+<div
+  className="w-full md:w-1/2 md:h-auto md:min-h-[420px] flex-shrink-0 overflow-hidden"
+  style={{ height: mobileImageHeight }}
+>
         <img
           src={image}
           alt={title}
