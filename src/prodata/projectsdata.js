@@ -12,7 +12,7 @@ export const projects = [
       mobileImageHeight: "96px",
     description:
       "A full-stack real-time chat and video calling platform built for students.Peer-to-peer video calls with WebRTC, real-time messaging with Socket.io, and a sleek React frontend.",
-    technologies: ["React", "Node.js", "MongoDB", "Express","Tailwind","Daisyui","Socket.io","webRTC","PeerJS"],
+    technologies: ["React", "Node.js", "MongoDB", "Express","Tailwind","Daisyui","Socket.io","WebRTC","PeerJS"],
     links: {
       github: "https://github.com/anshika-guleria/PrepPal",
     },
@@ -67,7 +67,7 @@ export const projects = [
       mobileImageHeight: "96px",
     description:
       "A full-featured Flutter app streamlining organ and blood donation. Connects donors with recipients in real time, with dedicated donor/recipient dashboards, request tracking, and an admin panel — built as a UG final year project.",
-    technologies: ["Flutter", "Dart"],
+    technologies: ["Flutter", "Dart", "Firebase"],
     links: {
       github: "https://github.com/anshika-guleria/blood_organ_donation_app",
     },
