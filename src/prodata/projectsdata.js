@@ -11,8 +11,8 @@ export const projects = [
     image: PrepPal,
       mobileImageHeight: "96px",
     description:
-      "",
-    technologies: ["React.js", "Node.js", "MongoDB", "Express","Tailwind","Daisyui","Socket.io","webRTC","PeerJS"],
+      "A full-stack real-time chat and video calling platform built for students.Peer-to-peer video calls with WebRTC, real-time messaging with Socket.io, and a sleek React frontend.",
+    technologies: ["React", "Node.js", "MongoDB", "Express","Tailwind","Daisyui","Socket.io","webRTC","PeerJS"],
     links: {
       github: "https://github.com/anshika-guleria/PrepPal",
     },
@@ -55,7 +55,7 @@ export const projects = [
     image: WordWaltz,
     description:
       "A high-stakes word guessing game built in React. Every wrong guess wipes a language off the map — lose them all and it's game over. Guess the word to save the world!",
-    technologies: ["React", "Tailwind", "Vercel"],
+    technologies: ["React", "CSS"],
     links: {
       github: "https://github.com/anshika-guleria/Word_waltz_game",
       vercel: "https://word-waltz.vercel.app/",
