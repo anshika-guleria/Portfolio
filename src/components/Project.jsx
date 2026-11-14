@@ -1,4 +1,4 @@
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaYoutube } from "react-icons/fa";
 import { SiVercel } from "react-icons/si";
 import { useTheme } from "./Themecontext";
 import { techIcons } from "./teachIcons";
@@ -124,6 +124,24 @@ export default function Project({ title, image, description, technologies, links
               `}
             >
               <SiVercel className="text-base sm:text-lg" /> Live
+            </a>
+          )}
+          {links.youtube && (
+            <a
+              href={links.youtube}
+              target="_blank"
+              rel="noreferrer"
+              className={`
+                flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3
+                rounded-2xl text-sm sm:text-base font-medium
+                transition-all duration-200 hover:scale-[1.05]
+                ${dark
+                  ? "bg-red-600 hover:bg-red-500 text-white hover:shadow-lg hover:shadow-red-500/30"
+                  : "bg-red-600 hover:bg-red-700 text-white hover:shadow-lg hover:shadow-red-300/40"
+                }
+              `}
+            >
+              <FaYoutube className="text-base sm:text-lg" /> YouTube
             </a>
           )}
         </div>

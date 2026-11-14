@@ -1,4 +1,5 @@
 // src/data/projectsData.js
+import Boobuddy from "../assets/Boobuddy.png";
 import LifeShare from "../assets/LifeShare.png";
 import PhotoBooth from "../assets/PhotoBooth.png";
 import PrepPal from "../assets/PrepPal.png";
@@ -6,6 +7,17 @@ import ShelfReview from "../assets/ShelfReview.png";
 import ThinkBoard from "../assets/ThinkBoard.png";
 import WordWaltz from "../assets/WordWaltz.png";
 export const projects = [
+  {
+   title:"BooBuddy",
+    image: Boobuddy,
+    description:"Boo-buddy is a floating desktop companion powered by a local AI model running on Ollama. It can cheer you on, react when you poke it, answer a whisper, and get sleepy after midnight.",
+    technologies:["React","Electron","Ollama","Gemma"],
+    links:{
+      github:"https://github.com/anshika-guleria/boo-buddy",
+      youtube:"https://www.youtube.com/watch?v=RCAivnaWEyQ"
+    }
+
+  },
    {
     title: "PrepPal",
     image: PrepPal,

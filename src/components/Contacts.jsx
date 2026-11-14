@@ -25,7 +25,7 @@ const LINKS = [
     darkStyle:  "bg-rose-500/10 hover:bg-rose-500/25 text-rose-300 border border-rose-500/30 hover:border-rose-400/70",
   },
   {
-    href: "https://drive.google.com/file/d/10ycQRbfIJaMSJXVGdjV1mIB8gK8VvdaV/view?usp=sharing",
+    href: "https://drive.google.com/file/d/1HNA8TI68hPlXm8t5d62vY_ZSkkFswO-2/view?usp=sharing",
     icon: <FaFileAlt size={18} />,
     label: "Resume",
     lightStyle: "bg-white/25 hover:bg-white/40 text-white border border-white/20 hover:border-white/50",

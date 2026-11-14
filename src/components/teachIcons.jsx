@@ -1,31 +1,34 @@
 // src/data/techIcons.js
 
 import {
-    FaCss3Alt,
-    FaJs,
-    FaNodeJs,
-    FaReact
+  FaCss3Alt,
+  FaJs,
+  FaNodeJs,
+  FaReact
 } from "react-icons/fa";
 
 import {
-    SiDaisyui,
-    SiDart,
-    SiExpress,
-    SiFirebase,
-    SiFlutter,
-    SiJsonwebtokens,
-    SiMongodb,
-    SiReact,
-    SiSocketdotio,
-    SiTailwindcss,
-    SiWebrtc
+  SiDaisyui,
+  SiDart,
+  SiElectron,
+  SiExpress,
+  SiFirebase,
+  SiFlutter,
+  SiJsonwebtokens,
+  SiMongodb,
+  SiOllama,
+  SiReact,
+  SiSocketdotio,
+  SiTailwindcss,
+  SiWebrtc
 } from "react-icons/si";
 
 // Centralized tech icon mapping
 export const techIcons = {
   React: <FaReact className="text-sky-500" />,
   "React Native": <SiReact className="text-cyan-400" />,
-
+  Electron: <SiElectron className="text-blue-500" />,
+  Ollama: <SiOllama className="text-purple-500" />,
   "Node.js": <FaNodeJs className="text-green-600" />,
   Express: <SiExpress className="text-gray-800 dark:text-gray-100" />,
   MongoDB: <SiMongodb className="text-green-500" />,
